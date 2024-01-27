@@ -1,0 +1,30 @@
+definitions:
+  created-empty:
+    description: Created
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            statusCode:
+              type: number
+              example: 201
+  ok-empty:
+    description: OK
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            statusCode:
+              type: number
+              example: 200
+
+  uuid-param-arg:
+    in: path
+    description: Param type of uuid
+    required: true
+    name: id
+    schema:
+      type: string
+      format: uuid

@@ -1,0 +1,81 @@
+/device:
+  get:
+    tags:
+      - Device
+    summary: Get all
+    parameters:
+      - in: query
+        name: soundTypeRecognition
+        schema:
+          type: number
+          enum:
+            - 0
+            - 1
+      - in: query
+        name: isSimulated
+        schema:
+          type: boolean
+      - in: query
+        name: eventTimeFrom
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: eventTimeTo
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: soundTypeIds
+        schema:
+          type: string
+      - in: query
+        name: sortByEntity
+        schema:
+          type: string
+          enum:
+            - soundSource
+            - soundType
+      - in: query
+        name: sortBy
+        schema:
+          type: string
+          enum:
+            - id
+            - latitude
+            - longitude
+            - altitude
+            - eventTime
+            - isSimulated
+            - details
+            - createdAt
+            - name
+            - iconPicture
+            - underId
+            - filePath
+            - isInbuilt
+            - comment
+            - createdAt
+      - in: query
+        name: orderBy
+        schema:
+          type: string
+          enum:
+            - ASC
+            - DESC
+
+    responses:
+      "200":
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                statusCode:
+                  type: number
+                data:
+                  type: array
+                  items:
+                    type: object
+                    $ref: "#/definitions/device-get-all"

@@ -1,0 +1,60 @@
+{
+  "name": "ts-fastify-template",
+  "main": "app/main.js",
+  "author": "Nikita Mosin",
+  "private": true,
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node -r dotenv/config dist/main.js dotenv_config_path=./.env",
+    "start:local": "nodemon -r dotenv/config app/main.ts dotenv_config_path=./.env",
+    "start:build": "node dist/main.js",
+    "kysely-codegen": "npx kysely-codegen --out-file ./app/common/type/kysely.type.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.5.0",
+    "@fastify/swagger": "^8.14.0",
+    "@fastify/swagger-ui": "^2.1.0",
+    "csv-stringify": "^6.4.5",
+    "fastify": "^4.25.2",
+    "joi": "^17.12.0",
+    "jszip": "^3.10.1",
+    "kysely": "^0.27.2",
+    "lodash": "^4.17.21",
+    "pg": "^8.11.3",
+    "swagger-jsdoc": "^6.2.8",
+    "ts-node": "^10.9.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.11.8",
+    "@types/pg": "^8.11.0",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/uuid": "^9.0.8",
+    "@types/validator": "^13.11.8",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "dotenv": "^16.4.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "kysely-codegen": "^0.11.0",
+    "nodemon": "^3.0.3",
+    "prettier": "^3.2.4",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "typescript": "^5.3.3"
+  },
+  "engineStrict": true,
+  "packageManager": "^npm@10.3.0",
+  "engines": {
+    "npm": ">=10.3.0",
+    "node": ">=21.6.0"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "files/*"
+    ],
+    "ext": "ts, json, yaml"
+  }
+}

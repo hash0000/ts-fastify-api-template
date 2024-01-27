@@ -1,0 +1,102 @@
+definitions:
+  device-get-all:
+    properties:
+      id:
+        type: string
+        format: uuid
+      name:
+        type: string
+      underId:
+        type: string
+      isRegularMode:
+        type: boolean
+      isSimulated:
+        type: boolean
+      createdAt:
+        type: string
+        format: date-time
+      soundEvent:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+            signatureFilePath:
+              type: string
+            record:
+              type: string
+            rtc:
+              type: string
+              format: date-time
+            pressure:
+              type: number
+            temperature:
+              type: number
+            humidity:
+              type: number
+            windSpeed:
+              type: number
+            windDirection:
+              type: number
+            latitudeDevice:
+              type: number
+            longitudeDevice:
+              type: number
+            altitudeDevice:
+              type: number
+            source:
+              type: object
+            isChanged:
+              type: boolean
+            isSimulated:
+              type: boolean
+            createdAt:
+              type: string
+              format: date-time
+            soundSource:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                latitude:
+                  type: number
+                longitude:
+                  type: number
+                altitude:
+                  type: number
+                eventTime:
+                  type: string
+                  format: date-time
+                isSimulated:
+                  type: boolean
+                details:
+                  type: string
+                createdAt:
+                  type: string
+                  format: date-time
+                soundType:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      format: uuid
+                    name:
+                      type: string
+                    iconPicture:
+                      type: number
+                    underId:
+                      type: string
+                    filePath:
+                      type: string
+                    isInbuilt:
+                      type: boolean
+                    tag:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        iconPicture:
+                          type: number
